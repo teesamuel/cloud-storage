@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.min.css}">
+
+    <title>Exception</title>
+</head>
+<body class="p-3 mb-2 bg-light text-black">
+<div class="container">
+    <div>
+        <div class="alert alert-danger" align="center">
+            <span> Ops!! Only 0.1% of our users come accross this page !!!! Our Engineers have been notified </span>
+            <label><a id="home-page" th:href="@{'/home'}">Take me home</a></label>
+        </div>
+
+    </div>
+</body>
+</html>
