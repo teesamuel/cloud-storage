@@ -7,6 +7,7 @@ import com.udacity.jwdnd.course1.cloudstorage.model.User;
 import com.udacity.jwdnd.course1.cloudstorage.services.*;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,9 +23,6 @@ public class HomeController {
     private NoteService noteService;
     private UserService userService;
     private EncryptionService encryptionService;
-
-
-
 
     public HomeController( CredentialService credentialService, NoteService noteService,UserService userService,FileService  fileService,EncryptionService encryptionService) {
         this.fileService = fileService;
@@ -56,9 +54,6 @@ public class HomeController {
 
             if(!credentialService.isUserCredentialsAvailable(user.getUserId())){
                 List<Credential> credentialList = credentialService.getCredentialByUser(user.getUserId());
-//                for (Credential credential : credentialList) {
-//                    credential.setPassword(encryptionService.decryptValue(credential.getPassword(),credential.getKey()));
-//                }
                 if (credentialList != null) {
                     model.addAttribute("userCredentials", credentialList);
                 }
